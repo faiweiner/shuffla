@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome back! You are logged in as #{user.username}"
+      flash[:notice] = "Welcome back!"
       redirect_to games_path
     else
       flash[:notice] = "Invalid login. Please try again."

@@ -1,108 +1,132 @@
+/*=================================================*/
+/*================ GENERAL STYLING ================*/
+/*=================================================*/
+
 body {
   background-color: black;
   font-family: 'Source Sans Pro', sans-serif, arial;
   color: white;
+  font-size: 20px;
   text-align: center;
-  font-size: 16px;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.caption, .cap-sm, nav a {
+  color: #a1a2a6;
+  font-size: 14px;
+}
+nav {
+  display: block;
+  text-align: right;
+}
+
+nav ul {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  position: relative;
+  margin: 2px;
+  text-decoration: none;
+}
+
+a, nav a {
+  text-decoration: none;
+}
+
+a {color: #FFFFFF;}
+nav a:hover {
+  color: #FFFFFF;
+}
+
+/*=================================================*/
+/*========== DIVS: DISPLAYS &  ============*/
+/*=================================================*/
+.error-message {
+  background-color: white;
+  border: 2px dotted red;
+  width: 300px;
+  margin: 10px auto;
+  color: black;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+/*=================================================*/
+/*========== FORMS: BUTTONS AND INPUTS ============*/
+/*=================================================*/
+
+/* Signup and Signin                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.signup_form, .signin_form {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.signup_field, .signin_field {
+  display: block;
+  margin: 10px;
+  padding-right: 25px;
+  text-align:right;
+}
+
+.signin_field {padding-right: 88px;}
+
+.caption {
+  line-height: 0em;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+}
+
+/* Buttons and Input Links                         */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.button, .button-form, .button_input, input[type="submit"] {
+  background-color: #76aa27;
+  width: 150px;
 }
 
 .button, .button-form, .button_input {
+  height: 30px;
+  margin: 5px auto;
+  padding-top: 5px;
+  border-radius: 3px;
   font-size: 16px;
   text-align: center;
   -moz-text-align-last: center;
   text-align-last: center;
 }
 
-.button, .button-form {
-  background-color: #76aa27;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px;
-  margin: 5px auto;
-  padding-top: 5px;
-}
-
 input[type="submit"] {
   background-color: #76aa27;
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: auto;
   border-radius: 3px;
-  margin-top: 5px;
+  margin: 5px auto;
+  font-size: 16px;
   color: white;
   border: 3px;
 }
 
-.button:hover {
+.button:hover, input[type="submit"]:hover {
   background-color: #499000;
 }
 
-.button-form {
-  background-color: black;
-}
-
-.signup_form {
-  width: 400px;
-  margin: 0 auto;
-  background-color: #499000;
-  border-radius: 5px;
-}
-
-.form_submit {
-  margin: 4px;
-  background-color: #76aa27;
-  color: white;
-  border-radius: 3px;
-}
-
-#user-stats {
-  background-color: white;
-  border-radius: 3px;
-  padding: 10px;
-  text-align: left;
-  color: black;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.nav-li a {
-  color: #a1a2a6;
-}
-
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-.stats-wrapper {
-  margin: 0 auto;
-}
-.stats-display {
-  display: block;
-  background-color: blue;
-  border-radius: 5px;
-  margin: 5px auto;
-  padding: 5px;
-  width: 300px;
-  height: auto;
-}
-
-.correct-circle {
-  width: 10px;
-  height: 10px;
-  background-color: green;
-  border-radius: 100%;
-}
-.hack {
-  color: #2a2b29;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-/*Game-type-specific formatting*/
+/* Type-specific button formattting                */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .genre {background-color: #006dcc;}
 .genre:hover {background-color: #0287fb;}
@@ -112,3 +136,41 @@ a {
 
 .artist {background-color: #76aa27;}
 .artist:hover {background-color: #499000;}
+
+/*=================================================*/
+/*========= SECTION-SPECIFIC FORMATTING ===========*/
+/*=================================================*/
+
+/* Places Game ID at the bottom of the screen for reference*/
+.hack {
+  color: #2a2b29;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/*=================================================*/
+/*=========== PAGE-SPECIFIC FORMATTING ============*/
+/*=================================================*/
+
+/* User stats page                                 */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#user-stats {
+  background-color: white;
+  color: black;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.td-label {
+  text-align: left;
+  padding-right: 20px;
+}
+
+
+
+
+
+

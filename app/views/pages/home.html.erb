@@ -7,17 +7,13 @@
 
 <% else %>
 
-  <p>Gamify your music knowledge.<p>
-  <p>See how fast you can identify songs.<p>
-  <div class='button'>
-    <%= link_to('Sign in', login_path) %>
-  </div>
-
-
+  <h3>Gamify your music knowledge.</h3>
+  <p>See how fast you can identify songs.</p>
+  
   <h3>Find your Genre.</h3>
   <p>Shuffle has access to thousands of public playlist to choose from!.</p>
-  <p>See if you can find your favorite — if not, just let us know.</p>
-  <div class='button'>
-    <%= link_to('Sign up', new_user_path) %>
-  </div>
+  <p class="caption">See if you can find your favorite — if not, just let us know.</p>
+  <br>   
+  <%= link_to(content_tag(:div, 'Sign up', class:"button"),new_user_path) %>
+  <%= link_to(content_tag(:div, 'Sign in', class:"button"), login_path) %>
 <% end %>

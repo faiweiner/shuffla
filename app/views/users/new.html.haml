@@ -1,30 +1,31 @@
+%h1 Get in the game.
+
 - if @user.errors.any?
-  %h1 YOU MASSIVE IDIOT
-  %ol
-    - @user.errors.full_messages.each do |msg|
-      %li= msg
+  %div.error-message
+    %ol
+      - @user.errors.full_messages.each do |msg|
+        %li= msg
+  %h3 “No one is exempt from the rule that learning occurs through recognition of error.” 
 
 %div.signup_form
   = form_for @user do |f|
     %div.signup_field
-      %div.signup_field_left
-        = f.label :username
-      %div.signup_field_right 
-        = f.text_field :username, :autofocus => true
+      = f.label :username
+      = f.text_field :username, :autofocus => true
+      %p.caption email address
     %div.signup_field
-      %div.signup_field_left
-        = f.label :avatar
-      %div.signup_field_right 
-        = f.url_field :avatar
+      = f.label :name
+      = f.text_field :name
+      %p.caption display name
     %div.signup_field
-      %div.signup_field_left
-        = f.label :password
-      %div.signup_field_right 
-        = f.password_field :password
+      = f.label :avatar
+      = f.url_field :avatar
+      %p.caption url only
     %div.signup_field
-      %div.signup_field_left
-        = f.label :password_confirmation
-      %div.signup_field_right 
-        = f.password_field :password_confirmation
+      = f.label :password
+      = f.password_field :password
     %div.signup_field
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    %div.signup_field_center
       = f.submit 'Sign up',:class => "form_submit"

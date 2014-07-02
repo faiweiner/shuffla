@@ -1,28 +1,42 @@
-Hello
+<h1>Statistics</h1>
 
 <table id="user-stats">
   <tr>
-    <td>Username:</td>
+    <td class="td-label">Name:</td>
+    <td><%= @current_user.name %></td>
+  </tr>
+  <tr>
+    <td class="td-label">Username:</td>
     <td><%= @current_user.username %></td>
   </tr>
   <tr>
-    <td>Player since:</td>
+    <td class="td-label">Player since:</td>
     <td><%= @user_creation %></td>
   </tr>
   <tr>
-    <td>Games played: </td>
+    <td class="td-label">Games played: </td>
     <td><%= pluralize(@user_games_count, 'game') %></td>
   </tr>
   <tr>
-    <td>All-time score: </td>
+    <td class="td-label">Cumulative score: </td>
     <td><%= pluralize(@user_points_all, 'point') %></td>
   </tr>
-  <tr>i
-    <td>Songs guessed: </td>
-    <td><%= pluralize(@user_questions_count, 'song') %></td>
+  <tr>
+    <td class="td-label">High score: </td>
+    <td><%= pluralize(@user_highscore, 'point') %></td>
+  </tr>
+
+  <tr>
+    <td class="td-label">Fastest guess: </td>
+    <td><%= pluralize(@user_fastest, 'second') %></td>
+  </tr>
+
+  <tr>
+    <td class="td-label">Slowest guess: </td>
+    <td><%= pluralize(@user_slowest, 'second') %></td>
   </tr>
   <tr>
-    <td>Correct <% pluralize(@user_correct_count, 'guess') %>: </td>
-    <td><%= pluralize(@user_correct_count, 'guess') %></td>
+    <td class="td-label">Accuracy: </td>
+    <td><%= @user_correct_count %> / <%= pluralize(@user_questions_count, 'song') %></td>
   </tr>
 </table>

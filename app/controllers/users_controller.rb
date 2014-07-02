@@ -26,18 +26,24 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user_creation = find_current_user.created_at.strftime("%B %d, %Y")
     @user_all_games = Game.find_by(user_id: @current_user.id)
-    @user_games_count = User.find(@current_user.id).games.count
-    @user_points_all = User.find(@current_user.id).games.sum('total_time_points')
-    @user_questions_count = User.find(@current_user.id).questions.count
-    @user_correct_count = User.find(@current_user.id).games.sum('total_correct')
-    @user_creation = User.find(@current_user.id).created_at
+    @user_games_count = find_current_user.games.count
+    @user_points_all = find_current_user.games.sum('total_time_points')
+    @user_highscore = find_current_user.games.maximum('total_time_points')
+    @user_fastest = find_current_user.questions.minimum('duration').round(2)
+    @user_slowest = find_current_user.questions.maximum('duration').round(2)
+    @user_questions_count = find_current_user.questions.count
+    @user_correct_count = find_current_user.games.sum('total_correct')
   end
 
   private
 
+  def find_current_user
+    User.find(@current_user.id)
+  end
   def user_params
-    params.require(:user).permit(:username, :avatar, :password, :password_confirmation)
+    params.require(:user).permit(:username, :name, :avatar, :password, :password_confirmation)
   end
 
   def check_if_logged_in

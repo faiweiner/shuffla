@@ -1,7 +1,23 @@
-<p> Welcome to Shuffla </p>
+<h1>Shuffla </h1>
 
 <% if @current_user.present? %>
   <div>
-    <%= link_to('New Game', new_game_path) %> 
+    <%= link_to(content_tag(:div, 'Play Shuffla', class:"button"), new_game_path) %> 
+  </div>
+
+<% else %>
+
+  <p>Gamify your music knowledge.<p>
+  <p>See how fast you can identify songs.<p>
+  <div class='button'>
+    <%= link_to('Sign in', login_path) %>
+  </div>
+
+
+  <h3>Find your Genre.</h3>
+  <p>Shuffle has access to thousands of public playlist to choose from!.</p>
+  <p>See if you can find your favorite — if not, just let us know.</p>
+  <div class='button'>
+    <%= link_to('Sign up', new_user_path) %>
   </div>
 <% end %>

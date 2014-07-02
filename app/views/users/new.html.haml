@@ -6,16 +6,25 @@
 
 %div.signup_form
   = form_for @user do |f|
-    = f.label :username
-    = f.text_field :username, :autofocus => true
-
-    = f.label :avatar
-    = f.url_field :avatar
-
-    = f.label :password
-    = f.password_field :password
-
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-
-    = f.submit
+    %div.signup_field
+      %div.signup_field_left
+        = f.label :username
+      %div.signup_field_right 
+        = f.text_field :username, :autofocus => true
+    %div.signup_field
+      %div.signup_field_left
+        = f.label :avatar
+      %div.signup_field_right 
+        = f.url_field :avatar
+    %div.signup_field
+      %div.signup_field_left
+        = f.label :password
+      %div.signup_field_right 
+        = f.password_field :password
+    %div.signup_field
+      %div.signup_field_left
+        = f.label :password_confirmation
+      %div.signup_field_right 
+        = f.password_field :password_confirmation
+    %div.signup_field
+      = f.submit 'Sign up',:class => "form_submit"

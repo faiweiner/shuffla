@@ -6,12 +6,12 @@ module ApplicationHelper
     end
 
     if @current_user.present?
-      links += "<li>"
+      links += "<div><li class='nav-li'>"
       links += link_to('Logout ' + @current_user.username, login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
-      links += "</li>"
+      links += "</li></div>"
     else
-      links += "<li>#{ link_to('Sign up', new_user_path) }</li>"
-      links += "<li>#{ link_to('Sign in', login_path) }</li>"
+      links += "<div><li class='nav-li'>#{ link_to('Sign up', new_user_path) }</li></div>"
+      links += "<div><li class='nav-li'>#{ link_to('Sign in', login_path) }</li></div>"
     end
 
     links

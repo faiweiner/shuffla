@@ -3,6 +3,6 @@ Search Artist
 <%= form_tag games_path, :method => 'post' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search", :name => nil, :class => "button-form" %>
   </p>
 <% end %>

@@ -1,14 +1,13 @@
 <h2>Pick Game</h2>
 <h3>Group:</h3>
 <div>
-  <%= link_to('Genre', games_path, method: :get ) %> 
+  <%= link_to(content_tag(:div, 'Genre', class:"button genre"), games_path, method: :get ) %> 
 </div>
 <div>
-  <%= link_to('Playlist', games_path ) %> 
+  <%= link_to(content_tag(:div, 'Playlist', class:"button playlist"), games_path ) %> 
 </div>
 <div>
-  <%= link_to('Artist', games_new_artist_path, method: :get ) %> 
+  <%= link_to(content_tag(:div, 'Artist', class:"button artist"),games_new_artist_path, method: :get ) %> 
 </div>
-
 
 

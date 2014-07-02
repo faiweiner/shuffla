@@ -1,9 +1,64 @@
 body {
   background-color: black;
-  font-family: arial;
+  font-family: 'Source Sans Pro', sans-serif, arial;
   color: white;
+  text-align: center;
 }
 
-a:visited {
-  color: rgb (172,212,16)
+.button, .button-form {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding-top: 5px;
 }
+
+.button:hover {
+  background-color: #76aa27;
+}
+
+.button-form {
+  background-color: black;
+}
+
+.signup_form {
+  width: 400px;
+  margin: 0 auto;
+  background-color: #364f0f;
+  border-radius: 5px;
+}
+
+.form_submit {
+  margin: 4px;
+  background-color: #76aa27;
+  color: white;
+  border-radius: 3px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-li a {
+  color: #a1a2a6;
+}
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/*Game-type-specific formatting*/
+
+.genre {background-color: #006dcc;}
+.genre:hover {background-color: #0287fb;}
+
+.playlist {background-color: #ea5c79;}
+.playlist:hover {background-color: #ea2f55;}
+
+.artist {background-color: #76aa27;}
+.artist:hover {background-color: #499000;}
+
+

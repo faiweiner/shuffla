@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user_points_all = User.find(@current_user.id).games.sum('total_time_points')
     @user_questions_count = User.find(@current_user.id).questions.count
     @user_correct_count = User.find(@current_user.id).games.sum('total_correct')
+    @user_creation = User.find(@current_user.id).created_at
   end
 
   private

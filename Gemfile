@@ -44,6 +44,8 @@ gem 'rspotify'
 gem 'logger'
 # gem 'plaything'
 gem 'haml'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 
 group :development do
   gem 'pry-rails'

@@ -6,8 +6,8 @@ Hello
     <td><%= @current_user.username %></td>
   </tr>
   <tr>
-    <td>X</td>
-    <td>X</td>
+    <td>Player since:</td>
+    <td><%= @user_creation %></td>
   </tr>
   <tr>
     <td>Games played: </td>
@@ -17,7 +17,7 @@ Hello
     <td>All-time score: </td>
     <td><%= pluralize(@user_points_all, 'point') %></td>
   </tr>
-  <tr>
+  <tr>i
     <td>Songs guessed: </td>
     <td><%= pluralize(@user_questions_count, 'song') %></td>
   </tr>

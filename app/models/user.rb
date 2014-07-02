@@ -10,6 +10,7 @@
 #  updated_at       :datetime
 #  oauth_token      :string(255)
 #  oauth_expires_at :datetime
+#  name             :string(255)
 #
 
 class User < ActiveRecord::Base

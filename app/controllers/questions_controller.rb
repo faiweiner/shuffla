@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
       @selected_track = @choices_tracks.sample
 
       @question = Question.new
+      @question.track_uri = @selected_track.uri
       @question.save
 
       @question_id = @question.id # Pass current object's ID into an instance variable to be accessible in the Create view

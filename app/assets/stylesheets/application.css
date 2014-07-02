@@ -54,6 +54,14 @@ input[type="submit"] {
   border-radius: 3px;
 }
 
+#user-stats {
+  background-color: white;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: left;
+  color: black;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -82,6 +90,12 @@ a {
   height: auto;
 }
 
+.correct-circle {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 100%;
+}
 .hack {
   color: #2a2b29;
   position: fixed;

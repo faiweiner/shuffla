@@ -1,0 +1,28 @@
+Hello
+
+<table id="user-stats">
+  <tr>
+    <td>Username:</td>
+    <td><%= @current_user.username %></td>
+  </tr>
+  <tr>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>Games played: </td>
+    <td><%= pluralize(@user_games_count, 'game') %></td>
+  </tr>
+  <tr>
+    <td>All-time score: </td>
+    <td><%= pluralize(@user_points_all, 'point') %></td>
+  </tr>
+  <tr>
+    <td>Songs guessed: </td>
+    <td><%= pluralize(@user_questions_count, 'song') %></td>
+  </tr>
+  <tr>
+    <td>Correct <% pluralize(@user_correct_count, 'guess') %>: </td>
+    <td><%= pluralize(@user_correct_count, 'guess') %></td>
+  </tr>
+</table>

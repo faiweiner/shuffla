@@ -1,16 +1,19 @@
 class GamesController < ApplicationController
-  def index
-  end
-
   def new
   end
 
   def create
     #if params come from Artist Search =>
-    @artists = RSpotify::Artist.search(params[:search])
-    @selected_artist = @artists.first
-    @selected_artist_uri = @selected_artist.uri.gsub!('spotify:artist:','')
-  
+    if params[:type] == 'artist'
+      @artists = RSpotify::Artist.search(params[:search])
+      @selected_artist = @artists.first
+      @selected_artist_uri = @selected_artist.uri.gsub!('spotify:artist:','')
+    elsif params[:type] == 'genre'
+
+    elsif params[:type] == 'playlist'
+
+    end
+
     @game = Game.new
     # Come back here to fix BUG - what if user drops out mid-game?
     @game.user_id = @current_user.id
@@ -34,16 +37,22 @@ class GamesController < ApplicationController
     @artist_test_name = RSpotify::Artist.find(artist_id).name
     @game_question_count = @current_user.games.last.questions.count
     @game_correct_count = @current_user.games.last.questions.where("correct = true").count
+    @game.total_correct = @game_correct_count
+    @game.save
     
-    total_time = 0 #
+    @bonus_points = 0
     @current_user.games.last.questions.each do |question|
-      total_time += question.duration
+      @bonus_points += 3 if ( question.correct && question.duration < 5 )
+      @bonus_points += 1 if ( question.correct && question.duration < 10 )
     end
 
+    ## points calculation ##
+
     @game_avg_time = @current_user.games.last.questions.average("duration")
-    @game.total_time_points = 100 - total_time.round(2)
-    @game.total_time_points = 0 if @game.total_time_points <= 0
-    
+    @game_pts_correct_answer = (@game_correct_count * 10)
+
+    @game.total_time_points = @game_pts_correct_answer + @bonus_points
+
     @game.save
   end
 

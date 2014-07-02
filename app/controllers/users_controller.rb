@@ -24,6 +24,13 @@ class UsersController < ApplicationController
     render :text => 'This is the user edit page. Imagine there is a form here.'
   end
 
+  def index
+    @user_all_games = Game.find_by(user_id: @current_user.id)
+    @user_games_count = User.find(@current_user.id).games.count
+    @user_points_all = User.find(@current_user.id).games.sum('total_time_points')
+    @user_questions_count = User.find(@current_user.id).questions.count
+    @user_correct_count = User.find(@current_user.id).games.sum('total_correct')
+  end
 
   private
 

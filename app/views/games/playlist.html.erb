@@ -1,1 +1,8 @@
-Playlist Page
+Select Playlist
+
+<%= form_tag games_path, :method => 'post' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= hidden_field_tag(:type, 'artist') %>
+  </p>
+<% end %> 

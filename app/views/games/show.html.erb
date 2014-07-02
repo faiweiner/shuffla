@@ -1,27 +1,55 @@
 <div class="stats-wrapper">
   <div class="stats-display">
-    Artist: <br>
+    Artist:<br>
     <%= @artist_test_name %>
   </div>
   <div class="stats-display">  
-    Correct: <br>
+    Correct:<br>
     <%= @game_correct_count %>  out of  <%= @game_question_count %>
   </div>
 
   <div class="stats-display">
-    Average Time: <br>
+    Average Time:<br>
     <%= @game_avg_time.round(2) %> seconds
     <br>
-    <ul>
-    <% @game_questions.each do |question| %>
-        <li><%= number_with_precision(question.duration, precision: 2) %> s</li>
+
+    <table>
+      <% @game_questions.each do |question| %>
+        <tr>
+          <td>
+            <%= RSpotify::Track.find(question.track_uri.gsub!('spotify:track:','')).name %>
+          </td>
+          <td> 
+            <%= number_with_precision(question.duration, precision: 2) %> s
+          </td>
+          <% if question.correct %>
+            <td>
+              <div class="correct-circle"></div>
+            </td>
+            <td>
+              Correct
+            </td>
+          <% else %>
+            <td>
+              <div class="incorrect-circle"></div>
+            </td>
+            <td>
+              Incorrect
+            </td>
+          <% end %>
+        </tr>
     <% end %>
-    </ul>
+    </table>
+
   </div>
   <div class="stats-display">
-    Round Score: <br>
-    <%= @game.total_time_points.round(2) %> points
+    Score:<br>
+    <%= @game_pts_correct_answer %> <br>
+    + <%= @bonus_points %> bonus
+    <br>
+    TOTAL <% pluralize(@game.total_time_points, 'POINT') %>:
+    <%= @game.total_time_points.round(2) %>
   </div>
-
+  <br>
   <%= link_to(content_tag(:div, 'Play Again', class:"button"), new_game_path) %>
 </div>

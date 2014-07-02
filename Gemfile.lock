@@ -69,8 +69,6 @@ GEM
     multi_json (1.10.1)
     netrc (0.7.7)
     pg (0.17.1)
-    plaything (1.1.1)
-      ffi (~> 1.1)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -154,7 +152,6 @@ DEPENDENCIES
   json
   logger
   pg
-  plaything
   pry-rails
   rails (= 4.1.1)
   rspotify

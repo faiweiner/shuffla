@@ -42,7 +42,7 @@ gem 'json'
 gem 'spotify'
 gem 'rspotify'
 gem 'logger'
-gem 'plaything'
+# gem 'plaything'
 gem 'haml'
 
 group :development do

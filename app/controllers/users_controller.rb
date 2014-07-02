@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      session[:id] = @user.id
       flash[:notice] = "You've successfully signed up."
       # Once someone signs up, they currently need to log in. Better to have automatically log-in?
       flash[:color] = "valid"

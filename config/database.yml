@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: Fai
+  password:
+
+development:
+  <<: *default
+  database: shuffla_development
+
+test:
+  <<: *default
+  database: shuffla_test
+  
+production:
+  <<: *default
+  database: shuffla_production
+  username: shuffla
+  password: <%= ENV['SHUFFLA_DATABASE_PASSWORD'] %>

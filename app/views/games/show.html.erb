@@ -1,0 +1,16 @@
+CONGRATS - YOU MADE IT THROUGH THE GAME!
+<div>
+  Artist: <%= @artist_test_name %>
+</div>
+<div>  
+  Correct: <%= @game_correct_count %>
+</div>
+
+<div>
+  Average Time: <%= @game_avg_time.round(2) %> seconds
+</div>
+<div>
+  Round Score: <%= @game.total_time_points.round(2) %> points
+</div>
+
+<a href="new_game_path"><div class="button">New Game</div></a>

@@ -1,0 +1,7 @@
+<p> Welcome to Shuffla </p>
+
+<% if @current_user.present? %>
+  <div>
+    <%= link_to('New Game', new_game_path) %> 
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  font-family: arial;
+  color: white;
+}
+
+a:visited {
+  color: rgb (172,212,16)
+}

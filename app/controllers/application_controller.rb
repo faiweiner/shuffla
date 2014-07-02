@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user
   before_action :save_login_state, :only => [:new, :login_attempt]
 
+  RSpotify.authenticate("e3819ce718d6427488d4ff5e1a6da086", "f1427015700f4a41ad5ab1f6066a4be9")
+  
   private
 
   def authenticate_user

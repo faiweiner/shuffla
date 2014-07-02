@@ -28,16 +28,16 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find params[:id]
+    @game = @current_user.games.last
     artist_id = @game.artist_id
     @artist_test_name = RSpotify::Artist.find(artist_id).name
-    @game_question_count = Game.last.questions.count
-    @game_correct_count = Game.last.questions.where("correct = true").count
+    @game_question_count = @current_user.games.last.questions.count
+    @game_correct_count = @current_user.games.last.questions.where("correct = true").count
     total_time = 0 #
-    Game.last.questions.each do |question|
+    @current_user.games.last.questions.each do |question|
       total_time += question.duration
     end
-    @game_avg_time = Game.last.questions.average("duration")
+    @game_avg_time = @current_user.games.last.questions.average("duration")
     @game.total_time_points = 100 - total_time.round(2)
     @game.save
   end

@@ -13,4 +13,4 @@ CONGRATS - YOU MADE IT THROUGH THE GAME!
   Round Score: <%= @game.total_time_points.round(2) %> points
 </div>
 
-<a href="new_game_path"><div class="button">New Game</div></a>
+<%= link_to('Holla New Game', new_game_path) %> 

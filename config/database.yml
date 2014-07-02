@@ -17,5 +17,5 @@ test:
 production:
   <<: *default
   database: shuffla_production
-  username: shuffla
+  username: Fai
   password: <%= ENV['SHUFFLA_DATABASE_PASSWORD'] %>

@@ -1,16 +1,27 @@
-CONGRATS - YOU MADE IT THROUGH THE GAME!
-<div>
-  Artist: <%= @artist_test_name %>
-</div>
-<div>  
-  Correct: <%= @game_correct_count %>
-</div>
+<div class="stats-wrapper">
+  <div class="stats-display">
+    Artist: <br>
+    <%= @artist_test_name %>
+  </div>
+  <div class="stats-display">  
+    Correct: <br>
+    <%= @game_correct_count %>  out of  <%= @game_question_count %>
+  </div>
 
-<div>
-  Average Time: <%= @game_avg_time.round(2) %> seconds
-</div>
-<div>
-  Round Score: <%= @game.total_time_points.round(2) %> points
-</div>
+  <div class="stats-display">
+    Average Time: <br>
+    <%= @game_avg_time.round(2) %> seconds
+    <br>
+    <ul>
+    <% @game_questions.each do |question| %>
+        <li><%= number_with_precision(question.duration, precision: 2) %> s</li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="stats-display">
+    Round Score: <br>
+    <%= @game.total_time_points.round(2) %> points
+  </div>
 
-<%= link_to('Holla New Game', new_game_path) %> 
+  <%= link_to(content_tag(:div, 'Play Again', class:"button"), new_game_path) %>
+</div>

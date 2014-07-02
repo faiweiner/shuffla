@@ -3,9 +3,18 @@ body {
   font-family: 'Source Sans Pro', sans-serif, arial;
   color: white;
   text-align: center;
+  font-size: 16px;
+}
+
+.button, .button-form, .button_input {
+  font-size: 16px;
+  text-align: center;
+  -moz-text-align-last: center;
+  text-align-last: center;
 }
 
 .button, .button-form {
+  background-color: #76aa27;
   width: 100px;
   height: 30px;
   border-radius: 5px;
@@ -13,8 +22,18 @@ body {
   padding-top: 5px;
 }
 
-.button:hover {
+input[type="submit"] {
   background-color: #76aa27;
+  width: 200px;
+  height: 50px;
+  border-radius: 3px;
+  margin-top: 5px;
+  color: white;
+  border: 3px;
+}
+
+.button:hover {
+  background-color: #499000;
 }
 
 .button-form {
@@ -24,7 +43,7 @@ body {
 .signup_form {
   width: 400px;
   margin: 0 auto;
-  background-color: #364f0f;
+  background-color: #499000;
   border-radius: 5px;
 }
 
@@ -50,6 +69,25 @@ a {
   text-decoration: none;
 }
 
+.stats-wrapper {
+  margin: 0 auto;
+}
+.stats-display {
+  display: block;
+  background-color: blue;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 5px;
+  width: 300px;
+  height: auto;
+}
+
+.hack {
+  color: #2a2b29;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 /*Game-type-specific formatting*/
 
 .genre {background-color: #006dcc;}
@@ -60,5 +98,3 @@ a {
 
 .artist {background-color: #76aa27;}
 .artist:hover {background-color: #499000;}
-
-

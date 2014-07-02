@@ -9,6 +9,7 @@
 #  finish_at  :datetime
 #  duration   :float
 #  game_id    :integer
+#  track_uri  :string(255)
 #
 
 class Question < ActiveRecord::Base

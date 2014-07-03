@@ -71,6 +71,14 @@ nav a:hover {
   width: 75px;
 }
 
+.med-img-by-width {
+  width: 100px;
+}
+
+.med-img-by-height {
+  width: 200px;
+}
+
 /*=================================================*/
 /*========== FORMS: BUTTONS AND INPUTS ============*/
 /*=================================================*/
@@ -146,25 +154,13 @@ input[type="submit"] {
 .artist:hover {background-color: #499000;}
 
 /*=================================================*/
-/*========= SECTION-SPECIFIC FORMATTING ===========*/
-/*=================================================*/
-
-/* Places Game ID at the bottom of the screen for reference*/
-.hack {
-  color: #2a2b29;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-/*=================================================*/
 /*=========== PAGE-SPECIFIC FORMATTING ============*/
 /*=================================================*/
 
-/* User stats page                                 */
+/* User Stats page & Scoreboard                    */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#user-stats {
+#user-stats, #scoreboard {
   background-color: white;
   color: black;
   margin: 0 auto;
@@ -181,8 +177,51 @@ input[type="submit"] {
   text-align: center;
 }
 
+/* Game summary page                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+.stats-wrapper { margin: 0 auto;}
 
+.stats-display {
+  background-color: blue;
+  display: block;
+  width: 300px;
+  height: auto;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px;
+}
 
+.correct-circle {
+  background-color: green;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
 
+/* New Question page                               */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+.song-play {
+  overflow: hidden;
+  height: 79px;
+  width: 79px;
+  margin: 0 auto;
+  border: 3px solid black;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+
+/*=================================================*/
+/*========= SECTION-SPECIFIC FORMATTING ===========*/
+/*=================================================*/
+
+/* Places Game ID at the bottom of the screen for reference*/
+.hack {
+  color: #2a2b29;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

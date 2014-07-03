@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
   
   private
 
+  def scoreboard
+    # return list of users and scores that the partial can render
+    @games_all = Game.where("total_time_points is not null").order("total_time_points desc").limit(10)
+    # iteration happens in the partial view
+  end
+
   def authenticate_user
     if session[:user_id].present? 
       @current_user = User.where(:id => session[:user_id]).first

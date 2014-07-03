@@ -1,9 +1,9 @@
 <h1>New Question</h1>
 <div class="song-play">
-  <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= @selected_track.uri%>" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
-  <div="song-play-cover cover-1"></div>
-  <div="song-play-cover cover-2"></div>
+  <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= @selected_track.uri%>&autoplay" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
 </div>
+
+<br>
 
 <% @choices_tracks.each do |track| %>
   <%= form_tag(questions_path, method: "post") do %>

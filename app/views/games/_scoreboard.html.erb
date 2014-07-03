@@ -1,0 +1,14 @@
+<h2>Scoreboard</h2>
+<table id="scoreboard">
+    <% @games_all.each.with_index do |game, index| %>
+      <tr>
+        <td><%= index + 1 %>. </td>
+        <td>
+          <%= game.user.name %>    
+        </td>
+        <td>
+          <%= game.total_time_points %>
+        </td>
+      </tr>
+    <% end %>
+</table>

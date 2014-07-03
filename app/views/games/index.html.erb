@@ -1,8 +1,14 @@
 <div>
-  <p> Please log into your Spotify account prior to playing the game.</p>
+  <p> Have you logged into your Spotify account?</p>
+  <p> Please do so before starting a game.</p>
   <%= link_to(content_tag(:div, 'New Game', class:"button"), new_game_path) %> 
 </div>
 
 <div>
   <%= link_to(content_tag(:div, 'Stats', class:"button"), users_path) %>
+</div>
+
+<div>
+  <h3>High Score Board</h3>
+  <%= render partial: "scoreboard" %>
 </div>

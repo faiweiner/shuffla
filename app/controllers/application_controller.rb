@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def scoreboard
     # return list of users and scores that the partial can render
-    @games_all = Game.where("total_time_points is not null").order("total_time_points desc").limit(10)
+    @games_all = Game.top_ten 
     # iteration happens in the partial view
   end
 

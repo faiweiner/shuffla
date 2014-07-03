@@ -234,6 +234,26 @@ input[type="submit"] {
 /*========= SECTION-SPECIFIC FORMATTING ===========*/
 /*=================================================*/
 
+/* Question Selection                              */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#SecondsCountUp {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.song-choices-box {
+  background-color: blue;
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.song-choice {
+  background-color: red;
+  width: 200px;
+  display: inline;
+}
+
 /* Places Game ID at the bottom of the screen for reference*/
 .hack {
   color: #2a2b29;

@@ -9,6 +9,9 @@
         <td>
           <%= game.total_time_points %>
         </td>
+        <td>
+          <%= game.questions.average("duration") %>
+          </td>
       </tr>
     <% end %>
 </table>

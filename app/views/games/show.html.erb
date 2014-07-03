@@ -3,6 +3,8 @@
     Artist:<br>
     <%= @artist_test_name %>
   </div>
+
+<% if @current_user.games %>
   <div class="stats-display">  
     Correct:<br>
     <%= @game_correct_count %>  out of  <%= @game_question_count %>
@@ -16,11 +18,8 @@
     <table>
       <% @game_questions.each do |question| %>
         <tr>
-          <td>
-            <%= RSpotify::Track.find(question.track_uri.gsub!('spotify:track:','')).name %>
-          </td>
-          <td> 
-            <%= number_with_precision(question.duration, precision: 2) %> s
+          <td><%= RSpotify::Track.find(question.track_uri.gsub!('spotify:track:','')).name %></td>
+          <td><%= number_with_precision(question.duration, precision: 2) %> s
           </td>
           <% if question.correct %>
             <td>
@@ -51,4 +50,7 @@
   </div>
   <br>
   <%= link_to(content_tag(:div, 'Play Again', class:"button"), new_game_path) %>
+<% else %>
+ You haven't played any games!
+<% end%>
 </div>

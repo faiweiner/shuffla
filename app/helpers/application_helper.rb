@@ -9,7 +9,7 @@ module ApplicationHelper
       links += "</li>"
       links += " | "
       links += "<li>"
-      links += link_to("Welcome #{@current_user.username}", edit_user_path(@current_user.id))
+      links += link_to("Welcome #{@current_user.username}", user_path)
       links += "</li>"
     else
       links += "<li>#{ link_to('Sign up', new_user_path) }</li>"
@@ -21,6 +21,6 @@ module ApplicationHelper
   end
 
   def shuffla
-    "<li>#{ link_to('Shuffla', '/') }</li>"
+    "<li>#{ link_to('Shuffla', root_path) }</li>"
   end
 end

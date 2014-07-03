@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      session[:id] = @user.id
+      session[:user_id] = @user.id
       flash[:notice] = "You've successfully signed up."
       # Once someone signs up, they currently need to log in. Better to have automatically log-in?
       flash[:color] = "valid"
@@ -25,13 +25,7 @@ class UsersController < ApplicationController
     @user = @current_user
   end
 
-  def update
-    @user = @current_user
-    @user.update(user_params)
-    redirect_to users_path
-  end
-
-  def index
+  def show
     @user_avatar = find_current_user.avatar
     @user_creation = find_current_user.created_at.strftime("%B %d, %Y")
     @user_all_games = Game.find_by(user_id: @current_user.id)
@@ -39,10 +33,21 @@ class UsersController < ApplicationController
     @user_points_all = find_current_user.games.sum('total_time_points')
     @user_highscore = find_current_user.games.maximum('total_time_points')
     @user_avgscore = find_current_user.games.average('total_time_points')
-    @user_fastest = find_current_user.questions.minimum('duration').round(2)
-    @user_slowest = find_current_user.questions.maximum('duration').round(2)
+    @user_fastest = find_current_user.questions.minimum('duration')
+    @user_fastest.round(2) if @user_fastest.present?
+    @user_slowest = find_current_user.questions.maximum('duration')
+    @user_slowest.round(2) if @user_slowest.present?
     @user_questions_count = find_current_user.questions.count
     @user_correct_count = find_current_user.games.sum('total_correct')
+  end
+
+  def update
+    @user = @current_user
+    @user.update(user_params)
+    redirect_to user_path
+  end
+
+  def index
   end
 
   private

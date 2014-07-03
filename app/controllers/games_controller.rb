@@ -1,7 +1,10 @@
-class GamesController < ApplicationController
+  class GamesController < ApplicationController
   def new
   end
 
+  def index
+    @games_all = Game.top_ten
+  end
   def create
     #if params come from Artist Search =>
     if params[:type] == 'artist'

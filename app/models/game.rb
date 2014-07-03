@@ -16,4 +16,8 @@
 class Game < ActiveRecord::Base
   belongs_to :user
   has_many :questions
+
+  def self.top_ten
+    Game.where("total_time_points is not null").order("total_time_points desc").limit(10)
+  end
 end

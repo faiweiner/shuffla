@@ -47,7 +47,11 @@ a, nav a {
 a {color: #FFFFFF;}
 nav a:hover {
   color: #FFFFFF;
+  font-weight: 200;
 }
+
+.spotify {
+  color: #499000;}
 
 /*=================================================*/
 /*========== DIVS: DISPLAYS & IMAGES ============*/

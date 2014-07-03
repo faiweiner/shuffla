@@ -2,13 +2,16 @@
 
 <% if @current_user.present? %>
   <div>
+    <p> Please log into your <a href="https://www.spotify.com/us/login/" class="spotify">Spotify</a> account prior to playing the game.</p>
     <%= link_to(content_tag(:div, 'Play', class:"button"), new_game_path) %> 
   </div>
 
 <% else %>
-
   <h3>Gamify your music knowledge.</h3>
   <p>See how fast you can identify songs.</p>
+
+  <h3>Powered by Spotify.</h3>
+  <p>Shuffla runs on Spotify - you must have a Spotify account in order to play Shuffla.</p>
   
   <h3>Find your Genre.</h3>
   <p>Shuffle has access to thousands of public playlist to choose from!.</p>

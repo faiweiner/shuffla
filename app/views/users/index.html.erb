@@ -2,7 +2,13 @@
 
 <table id="user-stats">
   <tr>
-    <td class="td-label">Name:</td>
+    <td></td>
+    <td class="td-top">
+      <img src="<%=@user_avatar%>" alt="avatar" class="icon">
+    </td>
+  </tr>
+  <tr>
+    <td class="td-label">Alias:</td>
     <td><%= @current_user.name %></td>
   </tr>
   <tr>
@@ -25,7 +31,10 @@
     <td class="td-label">High score: </td>
     <td><%= pluralize(@user_highscore, 'point') %></td>
   </tr>
-
+  <tr>
+    <td class="td-label">Avg. score: </td>
+    <td><%= pluralize(@user_avgscore, 'point') %></td>
+  </tr>
   <tr>
     <td class="td-label">Fastest guess: </td>
     <td><%= pluralize(@user_fastest, 'second') %></td>

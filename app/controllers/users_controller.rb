@@ -22,15 +22,23 @@ class UsersController < ApplicationController
   end
 
   def edit
-    render :text => 'This is the user edit page. Imagine there is a form here.'
+    @user = @current_user
+  end
+
+  def update
+    @user = @current_user
+    @user.update(user_params)
+    redirect_to users_path
   end
 
   def index
+    @user_avatar = find_current_user.avatar
     @user_creation = find_current_user.created_at.strftime("%B %d, %Y")
     @user_all_games = Game.find_by(user_id: @current_user.id)
     @user_games_count = find_current_user.games.count
     @user_points_all = find_current_user.games.sum('total_time_points')
     @user_highscore = find_current_user.games.maximum('total_time_points')
+    @user_avgscore = find_current_user.games.average('total_time_points')
     @user_fastest = find_current_user.questions.minimum('duration').round(2)
     @user_slowest = find_current_user.questions.maximum('duration').round(2)
     @user_questions_count = find_current_user.questions.count

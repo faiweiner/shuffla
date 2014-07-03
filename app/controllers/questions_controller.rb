@@ -1,9 +1,12 @@
 class QuestionsController < ApplicationController
   def new
-    # once the user has answered X questions, user will be redirected to the Game Summary page (stats)
-    ### BUGGGG!! Users cannot play again with the below code!
-    if @current_user.games.count > 0 && @current_user.games.last.questions.count >= 3
-      @game_id = @current_user.games.last.id #pull Game ID for the following view to pull up statistics
+
+    game_length = 5
+
+    ####### DETERMINE GAME LENGTH ABOVE!!! #######
+
+    if @current_user.games.count > 0 && @current_user.games.last.questions.count >= game_length
+      @game_id = @current_user.games.last.id # pull Game ID for the following view to pull up statistics
       redirect_to game_path(id:@game_id)
     else
       @game = Game.where(:user_id => @current_user.id).last

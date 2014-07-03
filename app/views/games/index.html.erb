@@ -1,4 +1,8 @@
-
+<% if flash[:notice].present? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
   <div>
     <p> Have you logged into your <a href="https://www.spotify.com/us/login/" class="spotify" target="_blank">Spotify</a> account?</p>
     <p> Please do so before starting a game.</p>

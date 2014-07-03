@@ -11,7 +11,7 @@
   = form_for @user do |f|
     %div.signup_field
       = f.label :username
-      = f.text_field :username, :autofocus => true
+      = f.text_field :username, :autofocus => true, :placeholder => 'email@domain.com'
       %p.caption email address
     %div.signup_field
       = f.label :name

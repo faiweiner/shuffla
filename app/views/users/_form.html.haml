@@ -1,11 +1,11 @@
 %div.signup_form
   = form_for @user do |f|
     %div.signup_field
-      = f.label :username
-      = f.text_field :username, :autofocus => true
+      = f.label :username, "Username (email address)"
+      = f.text_field :username, :placeholder => "Search", :autofocus => true
       %p.caption email address
     %div.signup_field
-      = f.label :name
+      = f.label :alias
       = f.text_field :name
       %p.caption display name
     %div.signup_field

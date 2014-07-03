@@ -16,12 +16,8 @@
         <%== smartnav %>
       </ul>
     </nav>
-    <% if flash[:notice].present? %>
-        <div class="notice">
-          <%= flash[:notice] %>
-        </div>
-    <% end %>
     <%= yield %>
+    <div class="copyright">Built by Fai Weiner for GA's WDI-5</div>
   </div>
 </body>
 </html>

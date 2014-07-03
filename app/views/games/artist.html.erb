@@ -1,5 +1,12 @@
 <h1>Select Artist</h1>
 
+<% if flash[:notice] %>
+  <div class="notice">
+    <h3 class="warning">We're sorry!</h3>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <%= form_tag games_path, :method => 'post' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>

@@ -6,42 +6,33 @@
     @games_all = Game.top_ten
   end
   def create
-    #if params come from Artist Search =>
+    # CHANGE POPULARITY SCORE HERE to narrow or widen search criteria
+    popularity_selection = 50
+
+    #if user come from ARTIST SEARCH (params) =>
     if params[:type] == 'artist'
       @artists = RSpotify::Artist.search(params[:search])
+      # Next 10 lines check whether the artist is valid, based on Spotify's popularity score
       popularity_array = []
+
       @artists.each.with_index do |artist|
         popularity_array << artist.popularity
       end
-      @wanted_artist_index = popularity_array.find_index{|value| value >= 70}
-      redirect_to games_new_playlist_path if @wanted_artist_index == nil
 
-      
+      @wanted_artist_index = popularity_array.find_index{|value| value >= popularity_selection }
+
+      if @wanted_artist_index.nil?
+        flash[:notice] = "The selected artist cannot be selected due to regional copyrights or low ranking. Please try another artist."
+        redirect_to games_new_artist_path and return 
+      end
+
       @selected_artist = @artists.first
       @selected_artist_uri = @selected_artist.uri.gsub!('spotify:artist:','')
 
-
-      # if user.present? && user.authenticate(params[:password])
-      #   session[:user_id] = user.id
-      #   flash[:notice] = "Welcome back!"
-      #   redirect_to games_path
-      # else
-      #   flash[:notice] = "Invalid login. Please try again."
-      #   redirect_to login_path
-      # end
-
-
+    #if user come from GENRE SEARCH (params) =>
     elsif params[:type] == 'genre'
-      @artists = RSpotify::Artist.search(params[:search])
-      popularity_array = []
-      @artists.each.with_index do |artist|
-        popularity_array << artist.popularity
-      end
-      @wanted_artist_index = popularity_array.find_index{|value| value >= 70}
-      redirect_to games_new_playlist_path if @wanted_artist_index == nil
 
-      raise "hold up"
-
+    #if user come from PLAYLIST SEARCH (params) =>
     elsif params[:type] == 'playlist'
 
     end

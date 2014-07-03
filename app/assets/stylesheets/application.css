@@ -22,7 +22,7 @@ body {
   background-color: black;
   font-family: 'Source Sans Pro', sans-serif, arial;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -95,6 +95,9 @@ nav a:hover {
   width: 200px;
 }
 
+.horizontal-force-wrapper {
+  background-color: blue;
+}
 /*=================================================*/
 /*========== FORMS: BUTTONS AND INPUTS ============*/
 /*=================================================*/
@@ -176,7 +179,7 @@ input[type="submit"] {
 /* User Stats page & Scoreboard                    */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#user-stats, #scoreboard {
+#user-stats, #scoreboard, #user-display {
   background-color: white;
   color: black;
   margin: 0 auto;

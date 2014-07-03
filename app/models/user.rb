@@ -17,8 +17,9 @@ class User < ActiveRecord::Base
 
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 2, }
+  validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 10 }, :on => :create
   validates_format_of :username, :with => EmailRegex
+  validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 10 }, :on => :create
   # validates :password_digest, length: { in: 6..20 }
   has_secure_password
   has_many :games

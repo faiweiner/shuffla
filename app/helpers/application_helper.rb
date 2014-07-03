@@ -9,7 +9,7 @@ module ApplicationHelper
       links += "</li>"
       links += " | "
       links += "<li>"
-      links += link_to("Welcome #{@current_user.username}", user_path)
+      links += link_to("Welcome #{@current_user.username}", user_path(@current_user))
       links += "</li>"
     else
       links += "<li>#{ link_to('Sign up', new_user_path) }</li>"

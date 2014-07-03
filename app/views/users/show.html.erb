@@ -1,60 +1,36 @@
 <h1>Settings</h1>
-  <table>
+  <table id="user-display">
     <tr>
-      <td>Avatar</td>
+      <td></td>
+      <td class="td-top">
+        <img src="<%=@user_avatar%>" alt="avatar" class="icon">
+      </td>
+    </tr>
+    <tr>
+      <td class="td-label">Avatar</td>
       <td><%= @current_user.avatar %></td>
     </tr>
     <tr>
-      <td>Alias</td>
+      <td class="td-label">Alias</td>
       <td><%= @current_user.name %></td>
     </tr>
     <tr>
-      <td>Username</td>
+      <td class="td-label">Username</td>
       <td><%= @current_user.username %></td>
+    </tr>
+    <tr>
+      <td class="td-label">Player since:</td>
+      <td><%= @user_creation %></td>
+    </tr>
+    <tr>
+      <td class="td-top">
+        <%= link_to(content_tag(:div, 'Update Account', class:"button"), edit_user_path )%>
+      <td>
     </tr>
   </table>
 
-  <%= link_to(content_tag(:div, 'Update Account', class:"button"), edit_user_path )%>
-<!--       = f.label :username
-      = f.text_field :username, :autofocus => true
-      %p.caption email address
-    %div.signup_field
-      = f.label :name
-      = f.text_field :name
-      %p.caption display name
-    %div.signup_field
-      = f.label :avatar
-      = f.url_field :avatar
-      %p.caption url only
-    %div.signup_field
-      = f.label :password
-      = f.password_field :password
-    %div.signup_field
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-    %div.signup_field_center
-      = f.submit 'Sign up',:class => "form_submit"
- -->
 <h1>Statistics</h1>
 <table id="user-stats">
-  <tr>
-    <td></td>
-    <td class="td-top">
-      <img src="<%=@user_avatar%>" alt="avatar" class="icon">
-    </td>
-  </tr>
-  <tr>
-    <td class="td-label">Alias:</td>
-    <td><%= @current_user.name %></td>
-  </tr>
-  <tr>
-    <td class="td-label">Username:</td>
-    <td><%= @current_user.username %></td>
-  </tr>
-  <tr>
-    <td class="td-label">Player since:</td>
-    <td><%= @user_creation %></td>
-  </tr>
   <tr>
     <td class="td-label">Games played: </td>
     <td><%= pluralize(@user_games_count, 'game') %></td>

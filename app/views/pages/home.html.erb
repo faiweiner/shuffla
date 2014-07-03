@@ -5,6 +5,8 @@
     <p> Have you logged into your <a href="https://www.spotify.com/us/login/" class="spotify" target="_blank">Spotify</a> account?</p>
     <p> Please do so before starting a game.</p>
     <%= link_to(content_tag(:div, 'Play Now', class:"button"), new_game_path) %> 
+    <h3>How to play</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat harum, quasi eum corporis ipsa, commodi quis debitis vitae sapiente accusantium impedit. Debitis sunt, obcaecati quisquam expedita, consectetur officiis iste excepturi?</p>
   </div>
   <%= render partial: "/games/scoreboard" %>
 
@@ -12,7 +14,7 @@
   <h3>Gamify your music knowledge.</h3>
   <p>See how fast you can identify songs.</p>
   <br>   
-  <%= link_to(content_tag(:div, 'Sign up', class:"button"),new_user_path) %>
+  <%= link_to(content_tag(:div, 'Sign up', class:"button"), new_user_path) %>
   <%= link_to(content_tag(:div, 'Sign in', class:"button"), login_path) %>
   <h3>Find your Genre.</h3>
   <p>Shuffle has access to thousands of public playlist to choose from!.</p>

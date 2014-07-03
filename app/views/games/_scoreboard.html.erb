@@ -1,5 +1,11 @@
 <h2>Scoreboard</h2>
 <table id="scoreboard">
+  <tr>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Score</th>
+    <td>Fastest Time</td>
+  </tr>
     <% @games_all.each.with_index do |game, index| %>
       <tr>
         <td><%= index + 1 %>. </td>

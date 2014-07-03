@@ -1,14 +1,16 @@
-<div>
-  <p> Have you logged into your Spotify account?</p>
-  <p> Please do so before starting a game.</p>
-  <%= link_to(content_tag(:div, 'New Game', class:"button"), new_game_path) %> 
-</div>
 
-<div>
-  <%= link_to(content_tag(:div, 'Stats', class:"button"), users_path) %>
-</div>
+  <div>
+    <p> Have you logged into your <a href="https://www.spotify.com/us/login/" class="spotify" target="_blank">Spotify</a> account?</p>
+    <p> Please do so before starting a game.</p>
+    <%= link_to(content_tag(:div, 'New Game', class:"button"), new_game_path) %> 
+  </div>
+  <div class="horizontal-force-wrapper">
+    <div>
+      <%= link_to(content_tag(:div, 'Stats', class:"button"), users_path) %>
+    </div>
 
-<div>
-  <h3>High Score Board</h3>
-  <%= render partial: "scoreboard" %>
-</div>
+    <div>
+      <h3>High Score Board</h3>
+      <%= render partial: "scoreboard" %>
+    </div>
+  </div>

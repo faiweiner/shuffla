@@ -42,9 +42,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @current_user
-    @user.update(user_params)
-    redirect_to user_path
+    @current_user.update(user_params)
+    redirect_to users_path
   end
 
   def index

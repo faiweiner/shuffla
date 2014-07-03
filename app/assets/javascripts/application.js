@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require TimeCircles
 //= require turbolinks
 //= require_tree .

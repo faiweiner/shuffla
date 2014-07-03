@@ -3,16 +3,36 @@
   <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= @selected_track.uri%>&autoplay" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
-<br>
+<div id="SecondsCountUp" style="width: 100%;"></div>
 
-<% @choices_tracks.each do |track| %>
-  <%= form_tag(questions_path, method: "post") do %>
-    <%= hidden_field_tag(:answer_selection, track.uri.gsub('spotify:track:','')) %>
-    <%= hidden_field_tag(:answer, @selected_track.uri.gsub('spotify:track:','')) %>
-    <%= hidden_field_tag(:question_id, @question_id) %>
-    <%= hidden_field_tag(:game_id, @game.id) %>
-    <%= submit_tag(track.name, :id => track.uri, :class => "button_input") %>
+<div class="song-choices">
+  <% @choices_tracks.each do |track| %>
+    <%= form_tag(questions_path, method: "post") do %>
+      <%= hidden_field_tag(:answer_selection, track.uri.gsub('spotify:track:','')) %>
+      <%= hidden_field_tag(:answer, @selected_track.uri.gsub('spotify:track:','')) %>
+      <%= hidden_field_tag(:question_id, @question_id) %>
+      <%= hidden_field_tag(:game_id, @game.id) %>
+      <%= submit_tag(track.name, :id => track.uri, :class => "button_input") %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <div class="hack">Game ID: <%= @game.id %></div>
+
+
+<script>
+ $("#SecondsCountUp").TimeCircles({
+    "animation": "smooth",
+    total_duration: "Minutes",
+    "bg_width": 1,
+    "fg_width": 0.07,
+    "circle_bg_color": "#313130",
+    "time": {
+      "Seconds": {
+            "text": "Seconds",
+            "color": "#499000",
+            "show": false
+        }
+    }
+  }); 
+</script>

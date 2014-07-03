@@ -5,8 +5,8 @@
 <%= form_tag games_path, :method => 'post' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= hidden_field_tag(:type, 'artist') %>
+    <%= hidden_field_tag(:type, 'playlist') %>
   </p>
 <% end %> 
 
-<h3>Press Enter</h3>
+<h3>Press Enter to continue.</h3>

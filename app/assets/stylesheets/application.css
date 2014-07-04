@@ -222,16 +222,25 @@ strong {
 
 /* User Stats page & Scoreboard                    */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-#user-stats, #scoreboard, #user-display {
-  background-color: white;
-  -moz-box-shadow:    2px 2px 2px 2px rgba(255,255,255, 0.3);
-  -webkit-box-shadow: 2px 2px 2px 2px rgba(255,255,255, 0.3);
-  box-shadow:         2px 2px 2px 2px rgba(255,255,255, 0.3);
-  color: black;
+#user-stats, #scoreboard, #user-display, .stats-display {
   margin: 0 auto;
-  padding: 15px;
+  color: white;
   border-radius: 3px;
+}
+
+#scoreboard, #user-display { 
+  width: 600px;
+  padding: 15px;
+}
+
+#user-stats {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.left-stats-display {
+  text-align: left;
+  padding-right: 10px;
 }
 
 .td-label {
@@ -249,16 +258,16 @@ strong {
 .stats-wrapper { margin: 0 auto;}
 
 .stats-display {
-  background-color: blue;
-  -moz-box-shadow:    2px 2px 2px 2px rgba(255,255,255, 0.3);
-  -webkit-box-shadow: 2px 2px 2px 2px rgba(255,255,255, 0.3);
-  box-shadow:         2px 2px 2px 2px rgba(255,255,255, 0.3);
   display: block;
-  width: 300px;
+  width: 400px;
   height: auto;
   margin: 5px auto;
   padding: 5px;
   border-radius: 5px;
+}
+
+.1 {
+  background-color: blue;
 }
 
 /* New Question page                               */
@@ -308,36 +317,36 @@ strong {
 
 /* Question Selection                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#SecondsCountUp {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-}
+  #SecondsCountUp {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
 
-.song-choices-box {
-  position: relative;
-  width: 450px;
-  margin: 0 auto;
-}
+  .song-choices-box {
+    position: relative;
+    width: 450px;
+    margin: 0 auto;
+  }
 
-.song-choice {
-  width: 200px;
-  height: 75px;
-  display: inline;
-}
+  .song-choice {
+    width: 200px;
+    height: 75px;
+    display: inline;
+  }
 
-/* Places Game ID at the bottom of the screen for reference*/
-.hack {
-  color: #2a2b29;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
+  /* Places Game ID at the bottom of the screen for reference*/
+  .hack {
+    color: #2a2b29;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
 
-.copyright {
-  color: #2a2b29;
-  position: fixed;
-  margin: 10px;
-  bottom: 0;
-  left: 0;
-}
+  .copyright {
+    color: #2a2b29;
+    position: fixed;
+    margin: 10px;
+    bottom: 0;
+    left: 0;
+  }

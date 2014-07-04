@@ -1,3 +1,9 @@
+- if @user.errors.any?
+  %div.error-message
+    %ol
+      - @user.errors.full_messages.each do |msg|
+        %li= msg
+
 %div.signup_form
   = form_for @user do |f|
     %div.signup_field

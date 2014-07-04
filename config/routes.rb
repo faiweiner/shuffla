@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
 
   resources :users
+  post '/user/:id' => 'users#update'
+
   resources :games
 
   get '/games/new/genre' => 'games#genre'

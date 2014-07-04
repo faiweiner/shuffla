@@ -33,17 +33,24 @@ class UsersController < ApplicationController
     @user_points_all = find_current_user.games.sum('total_time_points')
     @user_highscore = find_current_user.games.maximum('total_time_points')
     @user_avgscore = find_current_user.games.average('total_time_points')
+    @user_avgscore = @user_avgscore.round(3) if @user_avgscore != nil
     @user_fastest = find_current_user.questions.minimum('duration')
-    @user_fastest.round(2) if @user_fastest.present?
+    @user_fastest if @user_fastest.present?
+    @user_fastest = @user_fastest.round(2) if @user_fastest != nil
     @user_slowest = find_current_user.questions.maximum('duration')
-    @user_slowest.round(2) if @user_slowest.present?
+    @user_slowest if @user_slowest.present?
+    @user_slowest = @user_slowest.round(2) if @user_slowest != nil
     @user_questions_count = find_current_user.questions.count
     @user_correct_count = find_current_user.games.sum('total_correct')
   end
 
   def update
-    @current_user.update(user_params)
-    redirect_to users_path
+    if @current_user.update(user_params)
+      redirect_to user_path
+    else
+      @user = @current_user
+      render :edit
+    end
   end
 
   def index

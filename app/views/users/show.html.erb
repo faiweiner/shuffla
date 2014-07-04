@@ -7,10 +7,6 @@
       </td>
     </tr>
     <tr>
-      <td class="td-label"></td>
-      <td><%= @current_user.avatar %></td>
-    </tr>
-    <tr>
       <td class="td-label">Alias</td>
       <td><%= @current_user.name %></td>
     </tr>
@@ -45,16 +41,16 @@
   </tr>
   <tr>
     <td class="td-label">Avg. score: </td>
-    <td><%= pluralize(@user_avgscore.round(3), 'point') %></td>
+    <td><%= pluralize(@user_avgscore, 'point') %></td>
   </tr>
   <tr>
     <td class="td-label">Fastest guess: </td>
-    <td><%= pluralize(@user_fastest.round(2), 'second') %></td>
+    <td><%= pluralize(@user_fastest, 'second') %></td>
   </tr>
 
   <tr>
     <td class="td-label">Slowest guess: </td>
-    <td><%= pluralize(@user_slowest.round(2), 'second') %></td>
+    <td><%= pluralize(@user_slowest, 'second') %></td>
   </tr>
   <tr>
     <td class="td-label">Accuracy: </td>

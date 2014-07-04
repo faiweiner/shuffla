@@ -5,8 +5,20 @@
     <p> Have you logged into your <a href="https://www.spotify.com/us/login/" class="spotify" target="_blank">Spotify</a> account?</p>
     <p> Please do so before starting a game.</p>
     <%= link_to(content_tag(:div, 'Play Now', class:"button"), new_game_path) %> 
-    <h3>How to play</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat harum, quasi eum corporis ipsa, commodi quis debitis vitae sapiente accusantium impedit. Debitis sunt, obcaecati quisquam expedita, consectetur officiis iste excepturi?</p>
+    <div id="instructions">
+      <div id="play_inst">
+        <h3>How to play</h3>
+        <p>1. Click PLAY button to begin song</p>
+        <p>2. Guest fast for more points</p>
+        <p>3. Click PLAY button again when the timer reloads <br>to play the next question</p>
+      </div>
+      <div id="scoring_inst">
+        <h3>Scoring System</h3>
+        <p>Compete with your friends</p>
+        <p><strong>10 points</strong> for every correct guess</p>
+        <p><strong>Bonus points</strong> awarded by speed</p>
+      </div>
+    </div>
   </div>
   <%= render partial: "/games/scoreboard" %>
 

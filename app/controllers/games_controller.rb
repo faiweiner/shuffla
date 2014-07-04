@@ -9,7 +9,12 @@
     # CHANGE POPULARITY SCORE HERE to narrow or widen search criteria
     popularity_selection = 50
 
-    #if user come from ARTIST SEARCH (params) =>
+    if params[:search].nil? || params[:search].empty? 
+      flash[:notice] = "Please select an artist."
+      redirect_to games_new_artist_path and return
+    end
+
+    # ::::ARTIST:::: if user come from ARTIST SEARCH (params) =>
     if params[:type] == 'artist'
       @artists = RSpotify::Artist.search(params[:search])
       # Next 10 lines check whether the artist is valid, based on Spotify's popularity score
@@ -29,10 +34,10 @@
       @selected_artist = @artists.first
       @selected_artist_uri = @selected_artist.uri.gsub!('spotify:artist:','')
 
-    #if user come from GENRE SEARCH (params) =>
+    # ::::GENERE:::: if user come from GENRE SEARCH (params) =>
     elsif params[:type] == 'genre'
 
-    #if user come from PLAYLIST SEARCH (params) =>
+    # ::::PLAYLIST:::: if user come from PLAYLIST SEARCH (params) =>
     elsif params[:type] == 'playlist'
 
     end

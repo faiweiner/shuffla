@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, :uniqueness => true, :length => { :minimum => 10 }, :on => :create
   validates_format_of :username, :with => EmailRegex
-  validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 10 }, :on => :create
-  # validates :password_digest, length: { in: 6..20 }
+  validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 6 }, :on => :create
+  validates :password, length: { in: 6..20 }
   has_secure_password
   has_many :games
   has_many :playlists

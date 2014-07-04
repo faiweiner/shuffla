@@ -1,8 +1,9 @@
 <h1>New Question</h1>
 <div class="song-play">
-  <iframe src="https://embed.spotify.com/?uri=spotify:track:<%= @selected_track.uri%>&autoplay" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
+  <iframe id="song-player" src="https://embed.spotify.com/?uri=spotify:track:<%= @selected_track.uri%>&autoplay" width="250" height="330" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
+<p>Click PLAY when timer starts!</p>
 <div id="SecondsCountUp"></div>
 
 <div class="song-choices-box">
@@ -23,23 +24,25 @@
 
 
 <script>
- $("#SecondsCountUp").TimeCircles({
-    "animation": "smooth",
-    "total_duration": "Minutes",
-    "bg_width": 1,
-    "fg_width": 0.07,
-    "circle_bg_color": "#313130",
-    "time": {
-      "Days": { "show": false }, 
-      "Hours": { "show": false },
-      "Minutes": {
-        "show": false 
-      },
-      "Seconds": {
-        "text": "",
-        "color": "#499000",
-        "show": true
+ $("#song-player").load(function() {
+  $("#SecondsCountUp").TimeCircles({
+      "animation": "smooth",
+      "total_duration": "Minutes",
+      "bg_width": 1,
+      "fg_width": 0.07,
+      "circle_bg_color": "#313130",
+      "time": {
+        "Days": { "show": false }, 
+        "Hours": { "show": false },
+        "Minutes": {
+          "show": false 
+        },
+        "Seconds": {
+          "text": "",
+          "color": "#499000",
+          "show": true
+        }
       }
-    }
-  }); 
+    }); 
+  });
 </script>

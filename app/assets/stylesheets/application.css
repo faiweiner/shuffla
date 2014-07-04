@@ -33,8 +33,11 @@ body {
 
 .caption, .cap-sm, nav a {
   color: #a1a2a6;
-  font-size: 14px;
 }
+
+.caption, .cap-sm { font-size: 10px;}
+nav a { font-size: 14px;}
+
 nav {
   display: block;
   text-align: right;
@@ -58,6 +61,13 @@ nav ul li {
 
 a, nav a {
   text-decoration: none;
+}
+
+.caption {
+  line-height: 0em;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
 }
 
 a {color: #FFFFFF;}
@@ -95,6 +105,7 @@ nav a:hover {
 .icon {
   height: 75px;
   width: 75px;
+  border-radius: 100%;
 }
 
 .med-img-by-width {
@@ -143,12 +154,18 @@ nav a:hover {
 /* Buttons and Input Links                         */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.button, .button-form, .button_input, .form_submit {
+.button, .button-form, .form_submit {
   background-color: #76aa27;
   width: 150px;
 }
 
-.button, .button-form, .form_submit {
+.button_input {
+  background-color: #76aa27;
+  width: auto;
+
+}
+
+.button, .button-form, .button_input, .form_submit {
   height: 30px;
   margin: 5px auto;
   padding-top: 5px;
@@ -159,6 +176,13 @@ nav a:hover {
   -moz-text-align-last: center;
   text-align-last: center;
   border: 3px;
+}
+
+.button_input {
+  height: auto;
+  width: 225px;
+  border: 3px;
+  padding: 10px;
 }
 
 .form_submit {
@@ -255,18 +279,17 @@ nav a:hover {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #SecondsCountUp {
   width: 150px;
+  height: 150px;
   margin: 0 auto;
 }
 
 .song-choices-box {
-  background-color: blue;
   position: relative;
   width: 450px;
   margin: 0 auto;
 }
 
 .song-choice {
-  background-color: red;
   width: 200px;
   height: 75px;
   display: inline;

@@ -266,10 +266,6 @@ strong {
   border-radius: 5px;
 }
 
-.1 {
-  background-color: blue;
-}
-
 /* New Question page                               */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -317,36 +313,36 @@ strong {
 
 /* Question Selection                              */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  #SecondsCountUp {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
+#SecondsCountUp {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
 
-  .song-choices-box {
-    position: relative;
-    width: 450px;
-    margin: 0 auto;
-  }
+.song-choices-box {
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+}
 
-  .song-choice {
-    width: 200px;
-    height: 75px;
-    display: inline;
-  }
+.song-choice {
+  width: 200px;
+  height: 75px;
+  display: inline;
+}
 
-  /* Places Game ID at the bottom of the screen for reference*/
-  .hack {
-    color: #2a2b29;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-  }
+/* Places Game ID at the bottom of the screen for reference*/
+.hack {
+  color: #2a2b29;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 
-  .copyright {
-    color: #2a2b29;
-    position: fixed;
-    margin: 10px;
-    bottom: 0;
-    left: 0;
-  }
+.copyright {
+  color: #2a2b29;
+  position: fixed;
+  margin: 10px;
+  bottom: 0;
+  left: 0;
+}

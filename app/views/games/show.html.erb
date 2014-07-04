@@ -18,7 +18,7 @@
     <table>
       <% @game_questions.each do |question| %>
         <tr>
-          <td><%= RSpotify::Track.find(question.track_uri.gsub!('spotify:track:','')).name %></td>
+          <td><%= RSpotify::Track.find(question.track_uri).name %></td>
           <td><%= number_with_precision(question.duration, precision: 2) %> s
           </td>
           <% if question.correct %>

@@ -15,12 +15,29 @@ class QuestionsController < ApplicationController
       @selected_artist_uri = @selected_artist.uri.gsub!('spotify:artist:','')
 
       @tracks_array = @selected_artist.top_tracks(:US)
+
+      #check how many songs are on the tracks_array
+      # if @tracks_array.count > 10
+      
+      #### DUPLICATE CHECKER
+
+      previous_tracks = @game.questions.map { |question| question.track_uri }
+      previous_tracks.each do |uri|
+        uri.gsub!('spotify:track:','')
+      end
+
+      # Selecting songs for the picker
       @choices_tracks = []
       @choices_tracks = @tracks_array.sample(4)
       @selected_track = @choices_tracks.sample
 
+
+      while previous_tracks.include? @selected_track.id
+        @selected_track = @choices_tracks.sample
+      end
+      
       @question = Question.new
-      @question.track_uri = @selected_track.uri
+      @question.track_uri = @selected_track.id
       @question.save
 
       @question_id = @question.id # Pass current object's ID into an instance variable to be accessible in the Create view

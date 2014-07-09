@@ -70,7 +70,7 @@
     
     @bonus_points = 0
     @current_user.games.last.questions.each do |question|
-      @bonus_points += 3 if ( question.correct && question.duration < 5 )
+      @bonus_points += 2 if ( question.correct && question.duration < 5 )
       @bonus_points += 1 if ( question.correct && question.duration < 10 )
     end
 
